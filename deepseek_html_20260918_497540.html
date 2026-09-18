@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Obtén tu Constancia de Situación Fiscal con RFC e IDCIF por solo $60 MXN. Entrega en 15 minutos, 100% digital y seguro. Solicítala por WhatsApp.">
+    <title>Constancia de Situación Fiscal por $60 MXN | Trámite Rápido SAT</title>
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- Variables y Reseteo --- */
+        :root {
+            --bg-dark: #0A1428;
+            --bg-dark-blue: #0F2042;
+            --primary-yellow: #FFD700;
+            --primary-green: #25D366;
+            --primary-green-hover: #1DA851;
+            --text-white: #FFFFFF;
+            --text-muted: #A0B0C4;
+            --danger-red: #E74C3C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 80% 20%, rgba(15, 32, 66, 0.8) 0%, var(--bg-dark) 60%);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 25px 5%;
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        .logo i {
+            color: #3B82F6;
+            font-size: 30px;
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
+        }
+
+        .logo span.sub {
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--text-muted);
+            border-left: 1px solid var(--text-muted);
+            padding-left: 12px;
+            margin-left: 5px;
+            line-height: 1.2;
+            max-width: 150px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 5% 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 50px;
+            position: relative;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 320px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* --- ENFOQUE EN EL PRECIO (NUEVO DISEÑO) --- */
+        .price-emphasis {
+            display: inline-flex;
+            align-items: baseline;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--bg-dark);
+            padding: 10px 35px;
+            border-radius: 20px;
+            border: 4px solid #FFF;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 10px 20px rgba(0,0,0,0.4);
+            transform: rotate(-3deg) scale(1.05);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 10;
+            animation: pulsePrice 2s infinite;
+        }
+
+        .price-emphasis .text-solo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-right: 10px;
+            letter-spacing: 1px;
+        }
+
+        .price-emphasis .currency {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-top: 5px;
+        }
+
+        .price-emphasis .amount {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+        }
+
+        .price-emphasis .currency-code {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-left: 5px;
+            align-self: flex-end;
+            margin-bottom: 5px;
+        }
+
+        /* --- Títulos --- */
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-yellow);
+            display: block;
+            text-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .sub-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--primary-yellow);
+            color: var(--text-white);
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 6px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 90%;
+        }
+
+        /* Botón CTA Principal */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background-color: var(--primary-green);
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 18px 35px;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            background-color: var(--primary-green-hover);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+
+        .cta-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* --- Hero Visual (Teléfono) --- */
+        .hero-visual {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .phone {
+            width: 300px;
+            height: 600px;
+            background: #000;
+            border-radius: 45px;
+            padding: 12px;
+            box-shadow: 
+                0 30px 60px rgba(0,0,0,0.6),
+                0 0 0 8px #1a1a1a,
+                0 0 0 10px #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 25px;
+            background: #000;
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        .phone::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .screen {
+            background-color: #E5DDD5;
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .wa-header {
+            background-color: #075E54;
+            padding: 40px 15px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+        }
+
+        .wa-header .avatar {
+            width: 35px;
+            height: 35px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .wa-header .info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wa-header .name {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .wa-header .status {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .wa-chat {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10h80v80H10z" fill="none"/><circle cx="20" cy="20" r="1" fill="%23d4d4d4"/><circle cx="50" cy="50" r="1" fill="%23d4d4d4"/><circle cx="80" cy="80" r="1" fill="%23d4d4d4"/></svg>');
+        }
+
+        .message-bubble {
+            background: white;
+            padding: 15px;
+            border-radius: 10px 10px 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            max-width: 90%;
+            margin: 0 auto;
+            animation: slideIn 1s ease-out;
+        }
+
+        .message-bubble .pdf-icon {
+            color: var(--danger-red);
+            font-size: 35px;
+            margin-bottom: 5px;
+        }
+
+        .message-bubble h4 {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+
+        .message-bubble p {
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .message-bubble .fake-qr {
+            width: 70px;
+            height: 70px;
+            background: repeating-linear-gradient(45deg, #000, #000 4px, #fff 4px, #fff 8px);
+            margin: 0 auto;
+            border: 1px solid #ddd;
+        }
+
+        .check-float {
+            position: absolute;
+            bottom: 60px;
+            right: 20px;
+            background-color: var(--primary-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.5);
+            border: 4px solid white;
+            z-index: 20;
+            animation: bounce 2s infinite;
+        }
+
+        /* --- Features Section --- */
+        .features-section {
+            background-color: var(--bg-dark-blue);
+            padding: 80px 5%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary-yellow);
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--primary-yellow);
+            color: var(--bg-dark);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary-yellow);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Footer / CTA Final --- */
+        footer {
+            text-align: center;
+            padding: 80px 5% 40px;
+            background: linear-gradient(to bottom, var(--bg-dark-blue), #050A14);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-yellow), transparent);
+        }
+
+        footer h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary-yellow);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        footer .precio-footer {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 30px;
+            background: rgba(255, 215, 0, 0.1);
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: 1px dashed var(--primary-yellow);
+        }
+
+        .cta-final {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background-color: var(--primary-green);
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 900;
+            padding: 20px 50px;
+            border-radius: 60px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cta-final:hover {
+            transform: scale(1.05);
+            background-color: var(--primary-green-hover);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+        }
+
+        .cta-final i {
+            font-size: 2.2rem;
+        }
+
+        .taglines {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .tagline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--text-white);
+            text-transform: uppercase;
+        }
+
+        .tagline i {
+            color: var(--primary-yellow);
+            font-size: 1.2rem;
+        }
+
+        .disclaimer {
+            font-size: 0.75rem;
+            color: #4A5A70;
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+        }
+
+        /* --- Animaciones --- */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @keyframes pulsePrice {
+            0% { transform: rotate(-3deg) scale(1.05); box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 10px 20px rgba(0,0,0,0.4); }
+            50% { transform: rotate(-3deg) scale(1.08); box-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 10px 20px rgba(0,0,0,0.4); }
+            100% { transform: rotate(-3deg) scale(1.05); box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 10px 20px rgba(0,0,0,0.4); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 20px 5% 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                margin: 0 auto 30px;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+
+            .price-emphasis {
+                transform: rotate(0deg) scale(1);
+                padding: 10px 25px;
+            }
+
+            .price-emphasis .amount {
+                font-size: 3.5rem;
+            }
+
+            .features-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-final {
+                font-size: 1.2rem;
+                padding: 15px 30px;
+                width: 100%;
+            }
+
+            .cta-final i {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+
+            .price-emphasis {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                padding: 15px;
+            }
+
+            .price-emphasis .text-solo {
+                margin-right: 0;
+                font-size: 1rem;
+            }
+
+            .price-emphasis .currency {
+                display: none;
+            }
+
+            .price-emphasis .amount {
+                font-size: 4rem;
+            }
+
+            .price-emphasis .currency-code {
+                margin-left: 0;
+                align-self: center;
+                margin-bottom: 0;
+            }
+
+            .taglines {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-shapes"></i> SAT
+            <span class="sub">Servicio de Administración Tributaria</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                
+                <!-- NUEVO SELLO DE PRECIO GIGANTE -->
+                <div class="price-emphasis">
+                    <span class="text-solo">Por solo</span>
+                    <span class="currency">$</span>
+                    <span class="amount">60</span>
+                    <span class="currency-code">MXN</span>
+                </div>
+
+                <h1>Obtén tu <span>Constancia de Situación Fiscal</span></h1>
+                <div class="sub-badge">CON RFC + IDCIF</div>
+                <p>Tu documento oficial del SAT, rápido, fácil y seguro. Sin filas ni esperas.</p>
+                
+                <a href="https://wa.me/5215647385519?text=Hola,%20quiero%20solicitar%20mi%20Constancia%20de%20Situaci%C3%B3n%20Fiscal%20por%20solo%20$60%20MXN" class="cta-btn" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Pagar $60 y Recibir por WhatsApp
+                </a>
+            </div>
+
+            <div class="hero-visual">
+                <div class="phone">
+                    <div class="screen">
+                        <div class="wa-header">
+                            <div class="avatar"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div class="info">
+                                <span class="name">Documento SAT</span>
+                                <span class="status">enviado</span>
+                            </div>
+                        </div>
+                        <div class="wa-chat">
+                            <div class="message-bubble">
+                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                <h4>CONSTANCIA DE SITUACIÓN FISCAL</h4>
+                                <p>RFC: ******<br>Nombre, denominación o razón social: ******</p>
+                                <div class="fake-qr"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="check-float">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Entrega en 15 Minutos</h3>
+                    <p>Recibe tu documento al instante directamente en tu WhatsApp.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>100% Digital</h3>
+                    <p>Sin filas, sin esperas y sin necesidad de acudir a oficinas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                    <h3>Seguro</h3>
+                    <p>Tus datos personales están totalmente protegidos y encriptados.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                    <h3>Oficial</h3>
+                    <p>Documento válido y directo del SAT con código QR verificable.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2>¡Tu trámite, sin complicaciones!</h2>
+        <!-- Repetición estratégica del precio -->
+        <div class="precio-footer">Todo por solo $60 MXN</div>
+        
+        <a href="https://wa.me/5215647385519?text=Hola,%20quiero%20solicitar%20mi%20Constancia%20de%20Situaci%C3%B3n%20Fiscal%20por%20solo%20$60%20MXN" class="cta-final" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> 564 738 5519
+        </a>
+
+        <div class="taglines">
+            <div class="tagline"><i class="fa-solid fa-circle-check"></i> Rápido</div>
+            <div class="tagline"><i class="fa-solid fa-circle-check"></i> Fácil</div>
+            <div class="tagline"><i class="fa-solid fa-circle-check"></i> Atención Personalizada</div>
+        </div>
+
+        <p class="disclaimer">
+            Este es un servicio independiente de gestoría y asesoría fiscal. No somos una dependencia gubernamental. El precio de $60 MXN cubre el servicio de gestión. Los tiempos de entrega son responsabilidad del proveedor del servicio.
+        </p>
+    </footer>
+
+</body>
+</html>
